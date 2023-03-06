@@ -21,13 +21,14 @@ public class SoftAssertionContainsJUnit5 {
         Configuration.browserSize = "1920x1080";
         Configuration.screenshots = false;
         Configuration.baseUrl = "https://github.com/";
+        Configuration.holdBrowserOpen = true;
     }
     @Test
     void sampleCodeForJUnit5Tests() {
         open("/selenide/selenide");
         $("#wiki-tab").click();
-        $("#wiki-body").shouldHave(text("Soft assertions"));
-        $(byText("Soft assertions")).click();
+        $("#wiki-pages-filter").setValue("SoftAssertions");
+        $("span [href='/selenide/selenide/wiki/SoftAssertions']").shouldHave(text("SoftAssertions")).click();
         $("#wiki-body").shouldHave(text(sampleJUnitCode));
     }
 }
