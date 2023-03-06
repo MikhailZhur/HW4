@@ -21,7 +21,6 @@ public class SoftAssertionContainsJUnit5 {
         Configuration.browserSize = "1920x1080";
         Configuration.screenshots = false;
         Configuration.baseUrl = "https://github.com/";
-        Configuration.holdBrowserOpen = true;
     }
     @Test
     void sampleCodeForJUnit5Tests() {
